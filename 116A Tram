@@ -1,0 +1,29 @@
+#include<iostream>
+#include<stdio.h>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main ()
+{
+   int n;
+   cin>>n;
+   int a[n]={0};
+    int arr[n][2];
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+    a[0]=arr[0][0]+arr[0][1];
+    for(int i=1;i<n;i++)
+    {
+    
+        int x=a[i-1]-arr[i][0];
+        a[i]=x+arr[i][1];
+    }
+    int l=sizeof(a)/sizeof(a[0]);
+    cout<<*max_element(a,a+l);
+    
+}
