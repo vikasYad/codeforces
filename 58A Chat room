@@ -1,0 +1,31 @@
+#include<iostream>
+#include<conio.h>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    string a;
+    int count=0;
+    string b={"helo"};
+    for(int i=0;i<s.length();i++)
+    {
+        if(s[i]=='h'|| s[i]=='e' || s[i]=='l' || s[i]=='o')
+        {
+            a.push_back(s[i]);
+        }
+    }
+    for(int i=0;i<a.length();i++)
+    {
+        if(a[i]=='l' && a[i+1]=='l')
+        {count++; break;}
+        
+    }
+    a.erase(unique(a.begin(),a.end()),a.end());
+   cout<<a<<" "<<count;
+    if(a.compare(0,4,"helo")==0 && count>0)
+    cout<<"YES";
+    else
+    cout<<"NO";
+}
