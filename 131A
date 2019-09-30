@@ -1,0 +1,54 @@
+#include<iostream>
+#include<conio.h>
+#include<algorithm>
+#include<string>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    if(s.length()==1)
+    {
+        int x=islower(s[0]);
+        
+        if(x>1)
+        {
+            s[0]=toupper(s[0]);
+        }
+        else
+            s[0]=tolower(s[0]);
+    }
+      else
+      {
+           
+        int check=0;
+    
+       int x=islower(s[0]);
+      
+    
+        for(int i=0;i<s.length();i++)
+        {
+            int y=isupper(s[i]);
+            if(y>0)
+            check++;
+        }
+       
+        if(s.length()-1==check && x!=0)
+        {
+             s[0]=toupper(s[0]);
+            for(int i=1;i<s.length();i++)
+            {
+                s[i]=tolower(s[i]);
+            }
+        }
+        if(s.length()==check)
+        {
+            for(int i=0;i<s.length();i++)
+            {
+                s[i]=tolower(s[i]);
+            }
+        }
+      }
+      cout<<s;
+   
+}
