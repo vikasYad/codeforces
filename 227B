@@ -1,0 +1,32 @@
+#include<iostream>
+#include<conio.h>
+#include<algorithm>
+#include<string>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+     int x,length=0;
+    int arr[100001];
+    for(int i=1;i<=n;i++)
+    {
+        length++;
+        cin>>x;
+        arr[x]=i;
+    }
+    int t;
+    cin>>t;
+    int check;
+    long long int sum=0;
+    long long int sum1=0;
+   
+    for(int i=0;i<t;i++)
+    {
+      cin>>check;
+      sum+=arr[check];
+      sum1+=length-arr[check]+1;
+    }
+    cout<<sum<<" "<<sum1;
+    
+}
