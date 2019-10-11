@@ -1,0 +1,48 @@
+#include<iostream>
+#include<conio.h>
+#include<vector>
+#include<algorithm>
+#include<numeric>
+using namespace std;
+int main()
+{
+    vector<int> arr;
+    vector<int> :: iterator it,it1;
+     int n,m;
+     cin>>n>>m;
+    vector <int> que(n);
+    for(int i=1;i<=n;i++)
+    {
+        que[i-1]=i;
+    }
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+        arr.push_back(x);
+    }
+    it=que.begin();
+    it1=arr.begin();
+    while(que.size()!=1)
+    {
+      
+        if((*it1-m)<=0)
+        { 
+            que.erase(que.begin());
+            arr.erase(arr.begin());
+        }
+        else
+        {   *it1-=m;
+            int a=*it;
+            int b=*it1;
+            que.erase(que.begin());
+            arr.erase(arr.begin());
+            que.push_back(a);
+            arr.push_back(b);
+        }
+       
+    }
+    it=que.begin();
+    cout<<*it;
+    
+}
